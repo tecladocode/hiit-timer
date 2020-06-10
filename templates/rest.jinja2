@@ -8,10 +8,10 @@
     <div id="progress-bar"><div id="countdown-bar"></div></div>
 
     <script type="application/javascript">
-        var timerElement = document.getElementById("timer");
+        const timerElement = document.getElementById("timer");
         var repCounter = {{ rest }};
 
-        var interval = setInterval(function() {
+        const interval = setInterval(function() {
             if (repCounter <= 1) {
                 window.location.href = "{{ url_for('exercise', sets=sets) }}";
                 clearInterval(interval);

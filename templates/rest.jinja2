@@ -1,40 +1,27 @@
 {%  extends "base.jinja2" %}
 
 {% block content %}
-    <h1>REST</h1>
-    <div id="timer">
-        {{ rest }}s
-    </div>
-    <div id="progress-bar"><div id="countdown-bar"></div></div>
+    <h2 class="heading">Rest</h2>
+
+    <span class="timer" id="timer">{{ rest }}s</span>
+    <progress max="{{ rest }}" value="{{ rest }}" class="progress progress--rest" id="progressBar"></progress>
 
     <script type="application/javascript">
-        var timerElement = document.getElementById("timer");
-        var repCounter = {{ rest }};
+        const timerElement = document.getElementById("timer");
+        const progressBar = document.getElementById("progressBar")
 
-        var interval = setInterval(function() {
+        var repCounter = progressBar.max;
+
+        const interval = setInterval(() => {
             if (repCounter <= 1) {
                 window.location.href = "{{ url_for('exercise', sets=sets) }}";
                 clearInterval(interval);
             }
+
             repCounter = repCounter - 1;
+            
             timerElement.innerText = repCounter + "s";
+            progressBar.value = repCounter;
         }, 1000);
     </script>
-
-    <style>
-        #countdown-bar {
-            animation: countdown-animation linear;
-            animation-duration: {{ rest }}s;
-            background-color: #65F596;
-        }
-
-        @keyframes countdown-animation {
-            0% {
-                width: 100%;
-            }
-            100% {
-                width: 0;
-            }
-        }
-    </style>
 {% endblock %}

@@ -1,0 +1,40 @@
+{%  extends "base.jinja2" %}
+
+{% block content %}
+    <h1>REST</h1>
+    <div id="timer">
+        {{ rest }}s
+    </div>
+    <div id="progress-bar"><div id="countdown-bar"></div></div>
+
+    <script type="application/javascript">
+        var timerElement = document.getElementById("timer");
+        var repCounter = {{ rest }};
+
+        var interval = setInterval(function() {
+            if (repCounter <= 1) {
+                window.location.href = "{{ url_for('exercise', sets=sets) }}";
+                clearInterval(interval);
+            }
+            repCounter = repCounter - 1;
+            timerElement.innerText = repCounter + "s";
+        }, 1000);
+    </script>
+
+    <style>
+        #countdown-bar {
+            animation: countdown-animation;
+            animation-duration: {{ rest }}s;
+            background-color: #65F596;
+        }
+
+        @keyframes countdown-animation {
+            0% {
+                width: 100%;
+            }
+            100% {
+                width: 0;
+            }
+        }
+    </style>
+{% endblock %}

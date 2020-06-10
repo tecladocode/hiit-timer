@@ -11,92 +11,84 @@ body {
     background-color: #1c2023;
     font-weight: bold;
     color: white;
-    padding: 5px 20px;
-    margin-bottom: 30px;
+    padding: .5rem 2rem;
+    margin-bottom: 1.75rem;
 }
 
-h1 {
-    font-size: 22px;
+.header__logo {
+    font-size: 1rem;
+}
+
+.heading {
+    display: block;
+    font-size: 1.5rem;
     text-align: center;
-    margin-bottom: 0;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
 }
 
-#timer {
-    font-size: 64px;
+.timer {
+    display: block;
+    font-size: 4rem;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: .75rem;
 }
 
-#progress-bar {
-    margin: 0 auto 30px auto;
-    width: 75%;
-    height: 15px;
-    outline: 2px solid #1c2023;
+.main {
+    padding: 0 1.25rem;
 }
 
-#countdown-bar {
-    width: 100%;
-    background-color: #757B77;
-    height: 100%;
-}
-
-.container {
-    padding: 0 20px;
-}
-
-p {
-    text-align: center;
-}
-
-form {
+.form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 0.9rem;
 }
 
-.form-input {
+.form__button-container {
+    display: flex;
+    margin-top: 1.5rem;
+}
+
+.form__input-group {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin-bottom: 15px;
     align-items: center;
+    column-gap: .75rem;
+    margin-bottom: 1rem;
 }
 
-label {
-    margin-right: 10px;
-    font-size: 18px;
-    text-align: right;
-}
-
-input[type="number"] {
+.form__input {
     max-width: 6rem;
     border-radius: 4px;
     border: 1px solid #1c2023;
-    font-size: 14px;
     padding: 7px 10px;
+    font-size: inherit;
 }
 
-.units {
-    font-size: 14px;
-    margin-left: 5px;
+.form__label {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    text-align: right;
 }
 
-input[type="submit"] {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    font-size: 18px;
+.button {
+    font-size: 1.2rem;
+    padding: 10px 30px;
     border: 1px solid #1c2023;
     background-color: #98D4FF;
-    padding: 10px 30px;
-    margin-top: 30px;
+    cursor: pointer;
+    transition: background-color 0.1s ease-in-out;
 }
 
-input[type="submit"]:hover {
+.button:hover {
     background-color: #75BDF1;
-    cursor: pointer;
 }
 
 .progress {
-    width: 100%;
+    display: block;
+    width: 80%;
+    margin: 0 auto;
     border: 1px solid #cdc7c2;
     background-image: none;
     -webkit-appearance: none;

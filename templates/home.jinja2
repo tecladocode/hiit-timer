@@ -1,29 +1,25 @@
 {% extends "base.jinja2" %}
 
 {% block content %}
-    <h1>WELCOME</h1>
-    <div id="timer">
-        00s
-    </div>
-    <div id="progress-bar"><div id="countdown-bar"></div></div>
+    <h2 class="heading">Welcome</h2>
 
-    <form method="post">
-        <div class="form-input">
-            <label for="exercise">Exercise:</label>
-            <input type="number" name="exercise" id="exercise" value="45"/>
+    <form class="form" method="post">
+        <div class="form__input-group">
+            <label class="form__label" for="exercise">Exercise:</label>
+            <input class="form__input" type="number" name="exercise" id="exercise" value="45"/>
             <span class="units">(seconds)</span>
         </div>
-        <div class="form-input">
-            <label for="rest">Rest:</label>
-            <input type="number" name="rest" id="rest" value="15"/>
+        <div class="form__input-group">
+            <label class="form__label" for="rest">Rest:</label>
+            <input class="form__input" type="number" name="rest" id="rest" value="15"/>
             <span class="units">(seconds)</span>
         </div>
-        <div class="form-input">
-            <label for="sets">Sets:</label>
-            <input type="number" name="sets" id="sets" value="6"/>
+        <div class="form__input-group">
+            <label class="form__label" for="sets">Sets:</label>
+            <input class="form__input" type="number" name="sets" id="sets" value="6"/>
         </div>
-        <div class="form-input">
-            <input type="submit" value="Start!"/>
+        <div class="form__button-container">
+            <button class="button" type="submit">Start!</button>
         </div>
     </form>
 {% endblock %}

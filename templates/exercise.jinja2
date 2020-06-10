@@ -1,9 +1,9 @@
 {%  extends "base.jinja2" %}
 
 {% block content %}
-    <h1>EXERCISE</h1>
-    <div id="timer">{{ exercise }}s</div>
+    <h2 class="heading">Exercise</h2>
 
+    <span class="timer" id="timer">{{ exercise }}s</span>
     <progress max="{{ exercise }}" value="{{ exercise }}" class="progress progress--set" id="progressBar"></progress>
 
     <script type="application/javascript">

@@ -14,6 +14,11 @@ body {
     margin: 0 auto;
 }
 
+.u-center-text {
+    display: block;
+    text-align: center;
+}
+
 .header {
     background-color: #1c2023;
     font-weight: bold;

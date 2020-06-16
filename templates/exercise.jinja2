@@ -10,18 +10,18 @@
         const timerElement = document.getElementById("timer");
         const progressBar = document.getElementById("progressBar")
 
-        var repCounter = progressBar.max;
+        var timerCounter = progressBar.max;
 
         const interval = setInterval(() => {
-            if (repCounter === 0) {
-                window.location.href = "{{ url_for('rest', sets=sets) }}";
+            if (timerCounter === 0) {
+                window.location.href = "{{ url_for('rest') }}";
                 clearInterval(interval);
             }
 
-            repCounter = repCounter - 1;
+            timerCounter = timerCounter - 1;
             
-            timerElement.innerText = repCounter + "s";
-            progressBar.value = repCounter;
+            timerElement.innerText = timerCounter + "s";
+            progressBar.value = timerCounter;
         }, 1000);
     </script>
 {% endblock %}

@@ -22,15 +22,15 @@ def setup():
 
 @app.route("/rest")
 def rest():
-    return render_template("rest.jinja2", rest=session["rest"], sets=session["set_counter"])
+    return render_template("rest.jinja2", rest=session["rest"])
 
 
 @app.route("/exercise")
 def exercise():
-    session["set_counter"] += 1
-    if session["set_counter"] == session["sets"] + 1:
+    if session["set_counter"] == session["sets"]:
         return redirect(url_for("completed"))
-    return render_template("exercise.jinja2", exercise=session["exercise"], sets=session["set_counter"])
+    session["set_counter"] += 1
+    return render_template("exercise.jinja2", exercise=session["exercise"])
 
 
 @app.route("/complete")
